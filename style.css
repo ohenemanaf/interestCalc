@@ -1,0 +1,182 @@
+ :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --accent: #64748b; /* Muted Slate Blue/Sage */
+            --accent-light: #f1f5f9;
+            --text-pri: #0f172a;
+            --text-sec: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg);
+            color: var(--text-pri);
+            padding: 24px;
+        }
+
+        .container {
+            background: var(--surface);
+            padding: 48px;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--text-pri);
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            font-weight: 500;
+        }
+
+        .inputs-group {
+            margin-bottom: 32px;
+        }
+
+        .inputs {
+            margin-bottom: 20px;
+        }
+
+        .inputs:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-pri);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        input {
+            width: 100%;
+            outline: none;
+            padding: 14px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: #ffffff;
+            color: var(--text-pri);
+            font-weight: 500;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-light);
+        }
+
+        input::placeholder {
+            color: #cbd5e1;
+        }
+
+        .result-card {
+            background: var(--accent-light);
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .result-label {
+            font-size: 0.7rem;
+            color: var(--text-sec);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 700;
+        }
+
+        #outputAnswer {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-pri);
+            display: block;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .currency {
+            font-size: 1.25rem;
+            vertical-align: middle;
+            margin-right: 4px;
+            color: var(--text-sec);
+            font-weight: 600;
+        }
+
+        .solve-btn {
+            width: 100%;
+            padding: 18px;
+            background: #334155; /* Neutral Dark Slate */
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .solve-btn:hover {
+            background: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .solve-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Value Change Pulse */
+        .value-change {
+            animation: pop 0.4s ease;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* Hide Spinners */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
