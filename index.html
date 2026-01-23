@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANAF | Interest Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+        <header>
+            <h3>Interest Planner</h3>
+            <p class="subtitle">Calculate your projected growth</p>
+        </header>
+        
+        <div class="inputs-group">
+            <div class="inputs">
+                <label for="principal">Principal Amount</label>
+                <input id="principal" type="number" placeholder="e.g. 50,000">
+            </div>
+            
+            <div class="inputs">
+                <label for="rate">Annual Interest Rate (%)</label>
+                <input id="rate" type="number" placeholder="e.g. 7.5">
+            </div>
+            
+            <div class="inputs">
+                <label for="time">Duration (Years)</label>
+                <input id="time" type="number" placeholder="e.g. 5">
+            </div>
+        </div>
+
+        <div class="result-card">
+            <span class="result-label">Projected Interest</span>
+            <div id="outputContainer">
+                <span id="outputAnswer"><span class="currency">GHC</span>0.00</span>
+            </div>
+        </div>
+
+        <button class="solve-btn" onclick="calc()">Calculate Result</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
